@@ -1,13 +1,14 @@
 import Link from "next/link";
 import { Fragment } from "react"; 
-
 import classes from "./page.module.css"; 
-
+import ImageSlideshow from '@/components/images/image-slideshow'
 export default function Home() {
   return (
     <Fragment>
       <header className={classes.header}>
-        <div className={classes.slideshow}></div>
+        <div className={classes.slideshow}>
+          <ImageSlideshow />
+        </div>
         <div>
           <div className={classes.hero}>
             <h1>NextLevel Food for NextLevel Foodies</h1>
