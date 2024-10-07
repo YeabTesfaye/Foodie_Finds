@@ -4,8 +4,8 @@ import MealsGrid from "@/components/meals/meals-grid";
 import MealsHeader from "@/components/meals/meals-header";
 import { getMeals } from "@/lib/meals";
 
-async function Meal() {
-  const meals = await getMeals();
+function Meal() {
+  const meals = getMeals();
   return <MealsGrid meals={meals} />;
 }
 const MealsPage = () => {
