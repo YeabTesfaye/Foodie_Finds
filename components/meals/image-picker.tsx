@@ -32,9 +32,9 @@ export default function ImagePicker({ label, name }: Props) {
       <div className={classes.controls}>
         <div className={classes.review}>
           {!pickedImage && <p>No Image Picked yet!</p>}
-          {pickedImage && (
+          {/* {pickedImage && (
             <Image src={pickedImage} alt="Image Selected by user" fill />
-          )}
+          )} */}
         </div>
         <input
           className={classes.input}
