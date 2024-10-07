@@ -15,9 +15,8 @@ export default function MealsGrid({ meals }: Props) {
   return (
     <ul className={classes.meals}>
       {meals.map((meal) => (
-        <li>
-          {" "}
-          <MealItem {...meal} key={meal.id} />
+        <li key={meal.id}>
+          <MealItem {...meal} />
         </li>
       ))}
     </ul>
