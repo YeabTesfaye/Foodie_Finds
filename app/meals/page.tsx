@@ -1,8 +1,18 @@
+import { Fragment } from "react";
+import classes from "./page.module.css";
+import Link from "next/link";
+import MealsGrid from "@/components/meals/meals-grid";
+import MealsHeader from "@/components/meals/meals-header";
 
 const MealsPage = () => {
   return (
-    <div>MealsPage</div>
-  )
-}
+    <Fragment>
+      <MealsHeader />
+      <main className={classes.main}>
+        <MealsGrid meals={[]} />
+      </main>
+    </Fragment>
+  );
+};
 
-export default MealsPage
+export default MealsPage;
