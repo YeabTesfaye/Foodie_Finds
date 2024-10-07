@@ -1,6 +1,5 @@
 import { Fragment } from "react";
 import classes from "./page.module.css";
-import Link from "next/link";
 import MealsGrid from "@/components/meals/meals-grid";
 import MealsHeader from "@/components/meals/meals-header";
 
