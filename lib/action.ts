@@ -12,7 +12,14 @@ export type Meal = {
   creator_email: string;
   slug?: string;
 };
-export async function shareMeal(formData: FormData) {
+interface FormState {
+  message: string;
+}
+function isInvalidText(text: string) {
+  return !text || text.trim() == "";
+}
+
+export async function shareMeal(prevState: FormState, formData: FormData) {
   const meal: Meal = {
     title: formData.get("title") as string,
     summary: formData.get("summary") as string,
@@ -21,6 +28,23 @@ export async function shareMeal(formData: FormData) {
     creator: formData.get("name") as string,
     creator_email: formData.get("email") as string,
   };
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailPattern.test(meal.creator_email)) {
+    throw new Error("Invalid email address.");
+  }
+  const { title, summary, instructions, image, creator, creator_email } = meal;
+  if (
+    isInvalidText(title) ||
+    isInvalidText(summary) ||
+    isInvalidText(instructions) ||
+    isInvalidText(creator) ||
+    isInvalidText(creator_email) ||
+    !image
+  ) {
+    return {
+      message: "Invalid input",
+    };
+  }
   await saveMeal(meal);
   redirect("/meals");
 }

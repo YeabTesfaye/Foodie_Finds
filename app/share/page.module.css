@@ -96,3 +96,17 @@
   color: #979797;
   cursor: not-allowed;
 }
+
+.error {
+  color: red;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  background-color: #ffebeb; 
+  border: 1px solid red;
+  padding: 0.5rem;
+  border-radius: 4px;
+  max-width: 30%;
+  text-align: center;
+  box-sizing: border-box;
+}
