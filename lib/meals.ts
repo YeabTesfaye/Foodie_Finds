@@ -62,6 +62,4 @@ export async function saveMeal(meal: Meal) {
   `);
 
   insertMealQuery.run(meal);
-
-  console.log(`Meal saved with slug: ${meal.slug}`);
 }

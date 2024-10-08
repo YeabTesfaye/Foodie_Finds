@@ -1,8 +1,10 @@
 import { Fragment, Suspense } from "react";
+
 import classes from "./page.module.css";
 import MealsGrid from "@/components/meals/meals-grid";
 import MealsHeader from "@/components/meals/meals-header";
 import { getMeals } from "@/lib/meals";
+
 
 function Meal() {
   const meals = getMeals();

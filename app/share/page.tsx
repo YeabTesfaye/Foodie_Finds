@@ -6,6 +6,8 @@ import classes from "./page.module.css";
 import { shareMeal } from "@/lib/action";
 import MealsFormSubmiting from "@/components/meals/meals-form-submiting";
 
+
+
 export default function ShareMealPage() {
   const [state, formAction] = useFormState(shareMeal, {
     message: "Invalid input",

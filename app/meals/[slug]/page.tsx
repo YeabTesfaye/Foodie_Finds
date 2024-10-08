@@ -1,16 +1,26 @@
-import { getMeal } from "@/lib/meals";
-import classes from "./page.module.css";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { Fragment } from "react";
 
+import { getMeal } from "@/lib/meals";
+import classes from "./page.module.css";
+
 interface Props {
   params: { slug: string };
 }
-const MealDetailsPage = ({ params }: Props) => {
+export async function generateMetadata({ params }: Props) {
+  const meal =  getMeal(params.slug);
+  const { title, summary } = meal;
+  if (!meal) notFound();
+  return {
+    title: title,
+    description: summary,
+  };
+}
+const MealDetailsPage =  ({ params }: Props) => {
   const { slug } = params;
-  const meal = getMeal(slug);
+  const meal =  getMeal(slug);
   if (!meal) {
     notFound();
   }
