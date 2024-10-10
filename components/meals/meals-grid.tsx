@@ -13,9 +13,11 @@ interface Props {
 }
 export default function MealsGrid({ meals }: Props) {
   return (
-    <ul className={classes.meal}>
+    <ul className={classes.meals}>
       {meals.map((meal) => (
-        <MealItem {...meal} />
+        <li key={meal.id}>
+          <MealItem {...meal} />
+        </li>
       ))}
     </ul>
   );
